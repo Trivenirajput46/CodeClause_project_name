@@ -1,4 +1,4 @@
-# CodeClause_project_name
+# PROJECTS
 1.CALCULATOR PROJECT IN PYTHON 
 
 # DESCRIPTION
