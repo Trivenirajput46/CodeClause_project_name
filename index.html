@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palm Similarity Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Palm Similarity Checker</h1>
+        <form method="post" enctype="multipart/form-data">
+            <label for="user1">User 1 Name:</label>
+            <input type="text" id="user1" name="user1" required>
+            <label for="image1">Upload Image 1:</label>
+            <input type="file" id="image1" name="image1" accept="image/*" required>
+            <label for="user2">User 2 Name:</label>
+            <input type="text" id="user2" name="user2" required>
+            <label for="image2">Upload Image 2:</label>
+            <input type="file" id="image2" name="image2" accept="image/*" required>
+            <input type="submit" value="Compare Palms">
+        </form>
+        {% if similarity_index %}
+        <div class="result">
+            <p>Similarity Index: <span class="similarity-index">{{ similarity_index }}</span></p>
+            <p>{{ similarity_result }}</p>
+            <p>Lines detected on {{ user1 }}'s palm: {{ line_counts[0] }}</p>
+            <p>Lines detected on {{ user2 }}'s palm: {{ line_counts[1] }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
